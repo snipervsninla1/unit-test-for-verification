@@ -28,16 +28,10 @@ import {filterArrayAge} from './class';
   ;
     
     const arr=[];
-        arr.push(etud01);
-        arr.push(etud02);
-        arr.push(etud03);
-        arr.push(etud04);
-        arr.push(etud05);
-      
-    expect(filterArrayAge(arr)).toBe('il ya pas d etudiant avec un age superieur a 20');
-    
-  })
-  
+        arr.push(etud01,etud02,etud03,etud04,etud05);
+             
+    expect(filterArrayAge(arr)).toBe('il ya pas d etudiant avec un age superieur a 20');    
+  })  
 
 //division.test.js ****
 
