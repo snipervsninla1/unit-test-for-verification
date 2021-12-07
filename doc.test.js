@@ -1,16 +1,14 @@
-//addition.test.js
+//addition.test.js *****
 
-const addition=require('./addition')
+import {addition} from './addition';
 
-test('addition of two numbers',()=>{
-    expect(addition(2,5)).toBe(7);
-  });
+  test('addition of two numbers',()=>{expect(addition(2,5)).toBe(7); });
     
-// class.test.js
+// class.test.js ****
 
-const filter=require('./class');
+import {filterArrayAge} from './class';
 
-test('filter the elements create through a class',()=>{
+  test('filter the elements create through a class',()=>{
 
     class Etudiant{
       constructor(nom,prenom,age){
@@ -36,73 +34,75 @@ test('filter the elements create through a class',()=>{
         arr.push(etud04);
         arr.push(etud05);
       
-    expect(filter(arr)).toString('il ya pas d etudiant avec un age superieur a 20');
+    expect(filterArrayAge(arr)).toBe('il ya pas d etudiant avec un age superieur a 20');
+    
   })
   
 
-//division.test.js
+//division.test.js ****
 
-const div= require('./division.js');
+import {divisionTwoNumber} from './division.js';
 
-test("division of two numbers", () => {
-    expect(div(2, 0)).toBe("impossible");
-  });
-  
   test("division of two numbers", () => {
-    expect(div(2, 2)).toBe(1);
+     expect(divisionTwoNumber(2, 0)).toBe("impossible");
+      expect(divisionTwoNumber(2, 2)).toBe(1);
+   });
+ 
+//exo1tdd.test.js ******
+
+import { randomNumber } from "./exo1tdd.js";
+
+  test('aleatory number',()=>{
+
+    expect(randomNumber(2)).toBe("Good Work");
   });
 
+//exo3.test.js ******
 
-//exo1tdd.test.js
+import {multiplicationAndDivision} from './exo3';
 
+  test("multiply and divide two numbers", () => {
+      expect(multiplicationAndDivision(2, 0)).toBe("2*0=0 et 2/0 est impossible par 0");
+    });
 
+//exo4.test.js ******
 
-//exo3.test.js
-
-const multiDiv=require('./exo3')
-
-test("multiply and divide two numbers", () => {
-    expect(multiDiv(2, 0)).toBe("2*0=0 et 2/0 est impossible par 0");
-  });
-
-//exo4.test.js
-
-const longString=require('./exo4')
+import {longestString} from './exo4';
 
 test("longuest string froma array", () => {
     const arr = ["bonjour", "comment", "indisponible", "oui", "anticipe"];
-    expect(longString(arr)).toString("indisponible");
+    expect(longestString(arr)).toBe("indisponible");
   });
   
   test("longuest string froma array", () => {
     const arr = ["bonjour", "comment", "oui", "venir"];
-    expect(longString(arr)).toString("there is no longest string");
+    expect(longestString(arr)).toBe("there is no longest string");
   });
   
 
-//exo6.test.js
+//exo6.test.js ********
 
-const higthPaireNumber=require('./exo6')
+import {higthPaireNumber} from './exo6';
 
 test("even bigger number of Array", () => {
     const arr = [2, 88, 10, 99, 55];
     expect(higthPaireNumber(arr)).toBe(88);
   });
 
-//exo7.test.js
+//exo7.test.js ******
 
-const somCube=require('./exo7')
+import {sumsFromCubesByArray} from './exo7';
 
 test("sum of cubes of all ", () => {
     const arr = [1, 2, 3];
   
-    expect(somCube(arr)).toBe(36);
+    expect(sumsFromCubesByArray(arr)).toBe(36);
   });
   
 
-//exo8.test.js
+//exo8.test.js ******
 
-const comparTwoObject=require('./exo8')
+import {comparTwoObject} from './exo8';
 
 test("compare two object", () => {
     const Object1 = {
@@ -118,9 +118,7 @@ test("compare two object", () => {
       sexe: "feminin"
     };
   
-    expect(comparTwoObject(Object1, Object2)).toString(
-      "valeurs de propriété équivalentes"
-    );
+    expect(comparTwoObject(Object1, Object2)).toBe("valeurs de propriété équivalentes");
   });
   
   test("compare two object", () => {
@@ -137,23 +135,29 @@ test("compare two object", () => {
       sexe: "feminin"
     };
   
-    expect(comparTwoObject(Object1, Object2)).toString(
-      "differente valeur de propriété"
-    );
+    expect(comparTwoObject(Object1, Object2)).toBe("differente valeur de propriété");
   });
 
-//exo9.test.js
+//exo9.test.js *******
 
-const filterArray=require('./exo9');
+import {filterArray} from './exo9';
 
 test("filter array", () => {  
     expect(filterArray(["a", "b", 10, 8, 1, 4])).toEqual([10, 8]);
   });
   
+//exo10.test.js  *****
 
-//exo11.test.js
+  import {extractValues} from './exo10';
 
-const suppRoll=require('./exo11')
+  test("extract value of index for specified array", () => {
+    const arr = ["a", "b", "c", 3, 2, 1];
+    expect(extractValues(arr,2,4,5,8)).toBe(["c",2,1,"il n'ya pas d'element pour l'indexe 8"]);
+  });
+  
+//exo11.test.js *******
+
+import {suppRoll} from './exo11';
 
 test("delete roolno property", () => {
     const étudiant = {
@@ -169,214 +173,201 @@ test("delete roolno property", () => {
   });
 
 
-//exo14.test.js
+//exo14.test.js *******
 
-const checkString=require('./exo14')
+import {checkString} from './exo14';
 
 test("check the string", () => {
     const val = "good";
-    expect(checkString(val)).toString("cette chaine est en mminuscule");
+    expect(checkString(val)).toBe("cette chaine est en mminuscule");
   });
   
   test("check the string", () => {
     const val = "BAD";
-    expect(checkString(val)).toString("cette chaine est en majuscule");
+    expect(checkString(val)).toBe("cette chaine est en majuscule");
   });
 
-//multiplication.test.js
+//multiplication.test.js ******
 
-const multiplication=require('./multiplication')
+import {multiplication} from './multiplication';
 
 test('multiplication of two numbers',()=>{
     expect(multiplication(2,2)).toBe(4);
   });
 
-//som.test.js
 
-const sum = require('./som.js');
+//tdd6.test.js ******
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 4)).toBe(5);
-});
-
-//tdd6.test.js
-
-const orderOfString = require('./tdd6.js')
+import {orderOfString} from './tdd6.js';
 
 test ('string in order or not',()=>{
 const str="abc"
-    expect(orderOfString(str)).toString(true);
+    expect(orderOfString(str)).toBe(true);
 });
 
 test ('string in order or not',()=>{
     const str="xyz"
-        expect(orderOfString(str)).toString(true);
+        expect(orderOfString(str)).toBe(true);
     });
 
  test ('string in order or not',()=>{
         const str="123"
-            expect(orderOfString(str)).toString(true);
+            expect(orderOfString(str)).toBe(true);
         });
 
  test ('string in order or not',()=>{
             const str="aabbcc"
-                expect(orderOfString(str)).toString(true);
+                expect(orderOfString(str)).toBe(true);
             });
 
-//tdd7.test.js
+//tdd7.test.js *******
 
-const downString=require('./tdd7')
+import mergesWords from './tdd7';
 
 test('adding a sub-string',()=>{
     const arr=["accept", "achet", "adapt"];
     const add="able";
 
-    expect(downString(arr,add)).toString(["acceptable", "achetable", "adaptable"]);
+    expect(mergesWords(arr,add)).toEqual(["acceptable", "achetable", "adaptable"]);
 });
 
 test('adding a sub-string',()=>{
     const arr=["aim", "act", "ard"];
     const add="ant";
 
-    expect(downString(arr,add)).toString(["aimant", "actant", "ardant"]);
+    expect(mergesWords(arr,add)).toEqual(["aimant", "actant", "ardant"]);
 });
 
 
-//tdd8.test.js
+//tdd8.test.js *******
 
-const letterString =require('./tdd8')
-
-
-test ('uppercase or lowercase string',()=>{
-
-     const str="WayToLearnX"
-    expect(letterString(str)).toString(false);
-});
-
-test ('uppercase or lowercase string',()=>{
-
-    const str="waytolearnx"
-   expect(letterString(str)).toString(true);
-});
-
-test ('uppercase or lowercase string',()=>{
-
-    const str="WAYTOLEARNX"
-   expect(letterString(str)).toString(true);
-});
-
-//tdd9.test.js
-
-const leapYear=require('./tdd9')
-
-test('know a leap year ',()=>{
-
-    const year=2020;
-
-    expect(leapYear(year)).toString('true');
-});
-
-test('know a leap year ',()=>{
-
-    const year=1200;
-
-    expect(leapYear(year)).toString('false');
-});
-
-test('know a leap year ',()=>{
-
-    const year=2000;
-
-    expect(leapYear(year)).toString('true');
-});
+import {checkUppercaseOrLowercase} from './tdd8';
 
 
-//tdd10.test.js
+  test ('uppercase or lowercase string',()=>{
 
-const numEven=require('./tdd10')
+       const str="WayToLearnX"
+     expect(checkUppercaseOrLowercase(str)).toBe(false);
+  });
 
-test('even numbers of 1 to the given number',()=>{
+  test ('uppercase or lowercase string',()=>{
 
-    const nbrPaire=2;
-    expect(numEven(nbrPaire)).toEqual([2]);
-});
+     const str="waytolearnx"
+    expect(checkUppercaseOrLowercase(str)).toBe(true);
+  });
 
-test('even numbers of 1 to the given number',()=>{
+  test ('uppercase or lowercase string',()=>{
 
-    const nbrPaire=4;
-    expect(numEven(nbrPaire)).toEqual([2, 4]);
-});
+      const str="WAYTOLEARNX"
+    expect(checkUppercaseOrLowercase(str)).toBe(true);
+  });
 
-test('even numbers of 1 to the given number',()=>{
+//tdd9.test.js *******
 
-    const nbrPaire=6;
-    expect(numEven(nbrPaire)).toEqual([2, 4, 6]);
-});
+import {leapYear} from './tdd9';
 
-//tdd11.test.js
+  test('know a leap year ',()=>{
+     const year=2020;
 
-const mirror=require('./tdd11')
+     expect(leapYear(year)).toBe('true');
+   });
 
-test(' turn this painting into a mirror',()=>{
+  test('know a leap year ',()=>{
+      const year=1200;
 
-    const arr=[1, 2, 3];
-    expect(mirror(arr)).toEqual([1, 2, 3, 2, 1]);
-});
+      expect(leapYear(year)).toBe('false');
+   });
 
-test(' turn this painting into a mirror',()=>{
+  test('know a leap year ',()=>{
+      const year=2000;
 
-    const arr=[9, 8, 7];
-    expect(mirror(arr)).toEqual([9, 8, 7, 8, 9]);
-});
+      expect(leapYear(year)).toBe('true');
+  });
 
-test(' turn this painting into a mirror',()=>{
 
-    const arr=[10, 20];
-    expect(mirror(arr)).toEqual([ 10, 20, 10 ]);
-});
+//tdd10.test.js ********
 
-//tdd12.test.js
+import {numEven} from './tdd10';
 
-const palindrome=require('./tdd12')
+  test('even numbers of 1 to the given number',()=>{
 
-test('returns true if a number is a palindrome',()=>{
-    const str='212';
+     const nbrPaire=2;
+      expect(numEven(nbrPaire)).toEqual([2]);
+   });
 
-    expect(palindrome(str)).toString(true);
-});
+  test('even numbers of 1 to the given number',()=>{
 
-test('returns true if a number is a palindrome',()=>{
+     const nbrPaire=4;
+     expect(numEven(nbrPaire)).toEqual([2, 4]);
+   });
+
+  test('even numbers of 1 to the given number',()=>{
+
+      const nbrPaire=6;
+     expect(numEven(nbrPaire)).toEqual([2, 4, 6]);
+    });
+
+//tdd11.test.js ******
+
+import {mirrorArray} from './tdd11';
+
+  test(' turn this painting into a mirror',()=>{
+
+      const arr=[1, 2, 3];
+      expect(mirrorArray(arr)).toEqual([1, 2, 3, 2, 1]);
+    });
+
+  test(' turn this painting into a mirror',()=>{
+
+     const arr=[9, 8, 7];
+     expect(mirrorArray(arr)).toEqual([9, 8, 7, 8, 9]);
+    });
+
+  test(' turn this painting into a mirror',()=>{
+
+      const arr=[10, 20];
+     expect(mirrorArray(arr)).toEqual([ 10, 20, 10 ]);
+   });
+
+//tdd12.test.js ******
+
+import {palindrome} from './tdd12';
+
+  test('returns true if a number is a palindrome',()=>{
+      const str='212';
+
+      expect(palindrome(str)).toBe(true);
+  });
+
+  test('returns true if a number is a palindrome',()=>{
 
     const str='123';
-    expect(palindrome(str)).toString(false);
-});
+    expect(palindrome(str)).toBe(false);
+  });
 
-test('returns true if a number is a palindrome',()=>{
+  test('returns true if a number is a palindrome',()=>{
     const str='75257';
 
-    expect(palindrome(str)).toString(true);
+    expect(palindrome(str)).toBe(true);
 });
 
-//tdd13.test.js
+//tdd13.test.js *******
 
-const returnLetter=require('./tdd13')
+import uppercaseOrLowercaseLetter from './tdd13';
 
 test('return letter of one word',()=>{
-
     const str="WAYTOLEARNX";
-    expect(returnLetter).toString('Majuscule');
+    expect(uppercaseOrLowercaseLetter(str)).toBe('Majuscule');
 });
 
 test('return letter of one word',()=>{
-
     const str="waytolearnx";
-    expect(returnLetter).toString('Minuscule');
+    expect(uppercaseOrLowercaseLetter(str)).toBe('Minuscule');
 });
 
 test('return letter of one word',()=>{
-
     const str="WayToLearnX";
-    expect(returnLetter).toString('Mix');
+    expect(uppercaseOrLowercaseLetter(str)).toBe('Mix');
 });
 
 

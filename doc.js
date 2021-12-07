@@ -1,51 +1,46 @@
 //addition
-
+export 
     const addition=(num1,num2)=>num1+num2;
-    module.exports=addition;
 
 // class
 
-    const filter = (arr) => {
-     let result = [];
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i].age > 20) {
-         result.push(arr[i]);
-        }
-         return result.length > 0
-          ? result
-           : "il ya pas d etudiant avec un age superieur a 20";
-       }
-    };
-
-      module.exports=filter;
+export 
+const filterArrayAge = (arr) => {
+  const result = arr.filter(item=>item.age>20);
+   if(result.length>0){return result;}
+   else return"il ya pas d etudiant avec un age superieur a 20";
+    
+ };
 
 //division
 
-    const div=(dividing,divisor)=>divisor===0?'impossible':dividing/divisor;
-    module.exports=div;
+export 
+
+    const divisionTwoNumber=(dividing,divisor)=>divisor===0?'impossible':dividing/divisor;
 
 //exo1tdd
 
-    const random=(x)=> {
-     var t = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+export
+    const randomNumber=(x)=> {
+     var t = Math.floor(Math.randomNumber() * (10 - 1 + 1)) + 1;
        if (x === t) {
          return "Good Work";
         }
         return "Not matched";
      }
 
-     module.exports=random;
 
 //exo3
 
-     const multiDiv=(x, y)=>(y === 0)?(x + "*" + y + "=" + x * y +" et " + x + "/" + y +" est impossible par " + y)
+export 
+     const multiplicatAndDivision=(x, y)=>(y === 0)?(x + "*" + y + "=" + x * y +" et " + x + "/" + y +" est impossible par " + y)
                                      : x + "*" + y + "=" + x * y + "et" + x + "/" + y + "=" + x / y;
     
-     module.exports=multiDiv;
 
 //exo4
 
-    const longString = (arr) => {
+export 
+    const longestString = (arr) => {
      let val = arr[0];
       for (let i = 0; i < arr.length; i++) {
         if (arr[i].length > val.length) {
@@ -55,66 +50,59 @@
       return val;
     };
 
-      module.exports=longString;
 
 //exo6
 
-     const higthPaireNumber=(arr)=>{
-      const test=arr.filter(item=>item % 2 == 0);
-       return Math.max(...test);
-       }
-
-      module.exports=higthPaireNumber;
+export 
+const higthPaireNumber=(arr)=>{     
+  return Math.max(...arr.filter(item=>item % 2 == 0));
+  }
 
 //exo7
 
-    const somCube = (arr) => {
-        let som = 1;
-        let cub = 0;
-      
-        for (let i = 0; i < arr.length; i++) {
-          som = Math.pow(arr[i], 3);
-          cub += som;
-        }
-        return cub;
-      };
+export 
+    const sumsFromCubesByArray = (arr) => {
+          const som =arr.map(item=>Math.pow(item, 3)).reduce((a, b) => a + b);
+       }
     
-      module.exports=somCube;
-
 //exo8
 
+export 
       const comparTwoObject = (Object1, Object2) => {
-        return Object1.nom === Object2.nom
-          ? "valeurs de propriété équivalentes"
-          : Object1.prenom === Object2.prenom
-          ? "valeurs de propriété équivalentes"
-          : Object1.age === Object2.age
-          ? "valeurs de propriété équivalentes"
-          : Object1.sexe === Object2.sexe
-          ? "valeurs de propriété équivalentes"
-          : "differente valeur de propriété";
+        if( Object1.nom === Object2.nom){return "valeurs de propriété équivalentes"}
+        if(Object1.prenom === Object2.prenom){return "valeurs de propriété équivalentes"}
+        if(Object1.age === Object2.age){return "valeurs de propriété équivalentes"}
+        if(Object1.sexe === Object2.sexe){return"valeurs de propriété équivalentes"}
+        else return "differente valeur de propriété";
       };
     
-      module.exports=comparTwoObject;
-
 //exo9
 
+export 
       const filterArray = (arr) => {
-        const secondarr = arr.filter((item) => item > 5);
-        return secondarr;
-      };
-      module.exports=filterArray;
+        return arr.filter((item) => item > 5);
+        };
 
 //exo10
 
-      const extractVal = (arr) => {
-        return arr[(0, 1, 2)];
-      };
+export 
+
+  const extractValues = (arr , ...index) => {
+   const clues = [...index]
+    return clues.map(item =>{
+        if(item > arr.length-1){
+            return `il n'ya pas d'element pour l'indexe ${item}`
+       }
+       else{
+            return arr[item]
+      }
+    })
+  }
     
-      module.exports=extractVal;
 
 //exo11
 
+export 
       const suppRoll = (étudiant) => {
         console.log(étudiant);
         delete étudiant.rollno;
@@ -122,118 +110,92 @@
         return étudiant;
       };
     
-      module.exports=suppRoll;
 
  //exo14
 
-    const checkString = (val) =>
-     val !== val.toUpperCase()
-        ? "cette chaine est en mminuscule"
-       : "cette chaine est en majuscule";
+ export 
 
-          module.exports=checkString;
+    const checkString = (val) =>(val !== val.toUpperCase())? "cette chaine est en mminuscule"
+       : "cette chaine est en majuscule";
 
 //multiplication
 
+export
     const multiplication=(num1,num2)=>num1*num2;
 
-            module.exports=multiplication;
-
-//som
-
-    function sum(a, b) {
-      return a + b;
-     }
-     module.exports = sum;
 
 //tdd6
  
-const orderOfString=(str)=>{
+export 
+      const orderOfString=(str)=>{
+         return str === str.split("").sort().join("")
+       };
 
-    function checkOrder(str) {
+//exo tdd7 *********
 
-        return str === str.split("").sort().join("")
-      }
-}
-  module.exports=orderOfString;
+export 
+    const mergesWords=(arr,add)=>{
 
-//exo tdd7
-
-  const downString=(arr,add)=>{
-
-    const newADD=add.split(' ');
-    const tab=arr.map(item=>item.concat(newADD))
-    return tab;
-    }
+      //  const newADD=add.split(' ');
+       return arr.map(item=>item.concat(add.split(' ')))
+       };
     
-    module.exports =downString;
+//tdd8 *********
 
-//tdd8
-
-    const letterString=(str)=>{
+export 
+    const checkUppercaseOrLowercase=(str)=>{
 
         return str.toUpperCase() === str || str.toLowerCase() === str;
-    }
+     }
     
-    module.exports=letterString;
+//tdd9 *******
 
-//tdd9
+export 
+    const leapYear=(year)=>{
+      if ((year % 400) ===0 || (year % 4) ===0){return true;}
+      if((year %100)!==0 ){return false}
+    }
 
-const leapYear=(year)=>{
+//tdd10 *******
 
-    if ((year % 400) ===0 || (year % 4) ===0){
-return true;
-    }if((year %100)!==0 ){return false}
-}
-module.exports=leapYear;
-
-//tdd10
-
+export 
     const numEven=(nbrPaire)=>{
     
-        let paire = [];
-        
+        let paire = [];        
         for (let i = 1; i <= nbrPaire; i++) {
           if (i % 2 === 0) {
             paire.push(i);
           }
         }
-        
-        return paire;
+         return paire;
       }
 
-      module.exports=numEven;
+ //tdd11 ********
 
- //tdd11
-
-      const mirror=(arr)=>{
+ export 
+    const mirrorArray=(arr)=>{
 
         const n=[...arr]
         const tab=n.pop();
-        const newArr=n.reverse();
+       return n.concat([...arr].reverse());
+   }
     
-        return arr.concat(newArr);
-    }
-    
-    module.exports=mirror;
+//tdd12 ********
 
-//tdd12
-
+export 
+     
     const palindrome=(str)=>{
-
-        const arr=str.split('');
-        const tab=[...str];
-        const map=tab.reverse();
-        return (map===arr.join(''))?true:false;
-    }
-    module.exports=palindrome;
+      return (([...str].reverse().join(''))===(str.split('')).join(''))?true:false;
+     }
 
 //tdd13
 
-    const returnLetter=(str)=>(str.toLowerCase===str)?'Minuscule':(str.toUpperCase===str)?'Majuscule'
-    :(str.toLowerCase!==str && str.toUpperCase!==str)?'Mix':'null';
-
-    module.exports=returnLetter;
+export 
+   const uppercaseOrLowercaseLetter=(str)=>{
+       if(str.toLowerCase()===str){return 'Minuscule'}
+       if(str.toUpperCase()===str){return 'Majuscule'}
+        if(str.toLowerCase()!==str && str.toUpperCase!==str){return 'Mix'}
+       else return 'null';};
 
 
 
