@@ -1,8 +1,8 @@
-//addition
+//addition ******
 export 
     const addition=(num1,num2)=>num1+num2;
 
-// class
+// class ******
 
 export 
 const filterArrayAge = (arr) => {
@@ -12,60 +12,46 @@ const filterArrayAge = (arr) => {
     
  };
 
-//division
+//division *******
 
 export 
 
     const divisionTwoNumber=(dividing,divisor)=>divisor===0?'impossible':dividing/divisor;
 
-//exo1tdd
+//exo1tdd ******
 
 export
-    const randomNumber=(x)=> {
-     var t = Math.floor(Math.randomNumber() * (10 - 1 + 1)) + 1;
-       if (x === t) {
-         return "Good Work";
-        }
-        return "Not matched";
+    const randomNumber=(val)=> {
+     const number =Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+      return (val === number)?"Good Work":"Not matched";
      }
+    
 
-
-//exo3
+//exo3 ******
 
 export 
      const multiplicatAndDivision=(x, y)=>(y === 0)?(x + "*" + y + "=" + x * y +" et " + x + "/" + y +" est impossible par " + y)
                                      : x + "*" + y + "=" + x * y + "et" + x + "/" + y + "=" + x / y;
     
 
-//exo4
+//exo4 ******
 
 export 
-    const longestString = (arr) => {
-     let val = arr[0];
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i].length > val.length) {
-          val = arr[i];
-        }
-      }
-      return val;
-    };
-
-
-//exo6
-
-export 
-const higthPaireNumber=(arr)=>{     
-  return Math.max(...arr.filter(item=>item % 2 == 0));
-  }
-
-//exo7
-
-export 
-    const sumsFromCubesByArray = (arr) => {
-          const som =arr.map(item=>Math.pow(item, 3)).reduce((a, b) => a + b);
-       }
+    const longestString = (arr) =>  arr.reduce((previousValue, currentValue) => previousValue.length > currentValue.length 
+    ? previousValue: currentValue);
     
-//exo8
+//exo6 ******
+
+export 
+const higthPaireNumber=(arr)=> Math.max(...arr.filter(item=>item % 2 == 0));
+
+//exo7 ******
+
+export 
+    const sumsFromCubesByArray = (arr) => arr.map(item=>Math.pow(item, 3)).reduce((a, b) => a + b);
+  
+    
+//exo8 *******
 
 export 
       const comparTwoObject = (Object1, Object2) => {
@@ -76,14 +62,12 @@ export
         else return "differente valeur de propriété";
       };
     
-//exo9
+//exo9 ******
 
 export 
-      const filterArray = (arr) => {
-        return arr.filter((item) => item > 5);
-        };
+      const filterArray = (arr) => arr.filter((item) => item > 5);
 
-//exo10
+//exo10 ******
 
 export 
 
@@ -100,52 +84,45 @@ export
   }
     
 
-//exo11
+//exo11 ********
 
 export 
       const suppRoll = (étudiant) => {
         console.log(étudiant);
         delete étudiant.rollno;
         console.log(étudiant);
-        return étudiant;
       };
     
 
- //exo14
+ //exo14 *******
 
  export 
 
     const checkString = (val) =>(val !== val.toUpperCase())? "cette chaine est en mminuscule"
        : "cette chaine est en majuscule";
 
-//multiplication
+//multiplication *****
 
 export
     const multiplication=(num1,num2)=>num1*num2;
 
 
-//tdd6
+//tdd6 ********
  
 export 
-      const orderOfString=(str)=>{
-         return str === str.split("").sort().join("")
+      const orderOfString=(value)=>{
+         return value === value.split("").sort().join("")
        };
 
 //exo tdd7 *********
 
 export 
-    const mergesWords=(arr,add)=>{
-
-      //  const newADD=add.split(' ');
-       return arr.map(item=>item.concat(add.split(' ')))
-       };
+    const mergesWords=(arr,value)=> arr.map(item=>item.concat(value.split(' ')));
     
 //tdd8 *********
 
 export 
-    const checkUppercaseOrLowercase=(str)=>{
-
-        return str.toUpperCase() === str || str.toLowerCase() === str;
+    const checkUppercaseOrLowercase=(value)=>value.toUpperCase() === value || value.toLowerCase() === value;
      }
     
 //tdd9 *******

@@ -52,10 +52,8 @@ import {divisionTwoNumber} from './division.js';
 
 import { randomNumber } from "./exo1tdd.js";
 
-  test('aleatory number',()=>{
-
-    expect(randomNumber(2)).toBe("Good Work");
-  });
+test('takes an aleatory number and returns a word',()=>{
+  expect(randomNumber(4)).toBe("Not matched")})
 
 //exo3.test.js ******
 
@@ -67,16 +65,11 @@ import {multiplicationAndDivision} from './exo3';
 
 //exo4.test.js ******
 
-import {longestString} from './exo4';
+import {longestString} from './index';
 
 test("longuest string froma array", () => {
     const arr = ["bonjour", "comment", "indisponible", "oui", "anticipe"];
-    expect(longestString(arr)).toBe("indisponible");
-  });
-  
-  test("longuest string froma array", () => {
-    const arr = ["bonjour", "comment", "oui", "venir"];
-    expect(longestString(arr)).toBe("there is no longest string");
+    expect(longestString(arr)).toMatch("indisponible");
   });
   
 
@@ -118,7 +111,7 @@ test("compare two object", () => {
       sexe: "feminin"
     };
   
-    expect(comparTwoObject(Object1, Object2)).toBe("valeurs de propriété équivalentes");
+    expect(comparTwoObject(Object1, Object2)).toMatch("valeurs de propriété équivalentes");
   });
   
   test("compare two object", () => {
@@ -135,7 +128,7 @@ test("compare two object", () => {
       sexe: "feminin"
     };
   
-    expect(comparTwoObject(Object1, Object2)).toBe("differente valeur de propriété");
+    expect(comparTwoObject(Object1, Object2)).toMatch("differente valeur de propriété");
   });
 
 //exo9.test.js *******
@@ -201,23 +194,23 @@ test('multiplication of two numbers',()=>{
 import {orderOfString} from './tdd6.js';
 
 test ('string in order or not',()=>{
-const str="abc"
-    expect(orderOfString(str)).toBe(true);
+const value="abc"
+    expect(orderOfString(value)).toBe(true);
 });
 
 test ('string in order or not',()=>{
-    const str="xyz"
-        expect(orderOfString(str)).toBe(true);
+    const value="xyz"
+        expect(orderOfString(value)).toBe(true);
     });
 
  test ('string in order or not',()=>{
-        const str="123"
-            expect(orderOfString(str)).toBe(true);
+        const value="123"
+            expect(orderOfString(value)).toBe(true);
         });
 
  test ('string in order or not',()=>{
-            const str="aabbcc"
-                expect(orderOfString(str)).toBe(true);
+            const value="aabbcc"
+                expect(orderOfString(value)).toBe(true);
             });
 
 //tdd7.test.js *******
@@ -226,16 +219,16 @@ import mergesWords from './tdd7';
 
 test('adding a sub-string',()=>{
     const arr=["accept", "achet", "adapt"];
-    const add="able";
+    const value="able";
 
-    expect(mergesWords(arr,add)).toEqual(["acceptable", "achetable", "adaptable"]);
+    expect(mergesWords(arr,value)).toEqual(["acceptable", "achetable", "adaptable"]);
 });
 
 test('adding a sub-string',()=>{
     const arr=["aim", "act", "ard"];
-    const add="ant";
+    const value="ant";
 
-    expect(mergesWords(arr,add)).toEqual(["aimant", "actant", "ardant"]);
+    expect(mergesWords(arr,value)).toEqual(["aimant", "actant", "ardant"]);
 });
 
 
@@ -246,20 +239,20 @@ import {checkUppercaseOrLowercase} from './tdd8';
 
   test ('uppercase or lowercase string',()=>{
 
-       const str="WayToLearnX"
-     expect(checkUppercaseOrLowercase(str)).toBe(false);
+       const svaluetr="WayToLearnX"
+     expect(checkUppercaseOrLowercase(value)).toBe(false);
   });
 
   test ('uppercase or lowercase string',()=>{
 
-     const str="waytolearnx"
-    expect(checkUppercaseOrLowercase(str)).toBe(true);
+     const value="waytolearnx"
+    expect(checkUppercaseOrLowercase(value)).toBe(true);
   });
 
   test ('uppercase or lowercase string',()=>{
 
-      const str="WAYTOLEARNX"
-    expect(checkUppercaseOrLowercase(str)).toBe(true);
+      const value="WAYTOLEARNX"
+    expect(checkUppercaseOrLowercase(value)).toBe(true);
   });
 
 //tdd9.test.js *******
